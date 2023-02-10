@@ -1,0 +1,2 @@
+class MealDrugTakingRecordsController < ApplicationController
+end

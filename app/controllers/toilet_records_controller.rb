@@ -1,0 +1,2 @@
+class ToiletRecordsController < ApplicationController
+end

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2023-02-09
+  time: 2023-02-09 13:50:09
+  ingestion_quantity: 1
+  drug_taking_record: MyString
+
+two:
+  date: 2023-02-09
+  time: 2023-02-09 13:50:09
+  ingestion_quantity: 1
+  drug_taking_record: MyString

@@ -1,0 +1,2 @@
+module ToiletRecordsHelper
+end

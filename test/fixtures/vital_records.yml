@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2023-02-09
+  time: 2023-02-09 13:48:03
+  blood_pressure: MyString
+  pulse: 1
+  body_temperature: 1
+
+two:
+  date: 2023-02-09
+  time: 2023-02-09 13:48:03
+  blood_pressure: MyString
+  pulse: 1
+  body_temperature: 1

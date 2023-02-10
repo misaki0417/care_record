@@ -1,0 +1,2 @@
+module MealDrugTakingRecordsHelper
+end
