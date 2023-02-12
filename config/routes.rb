@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get 'homes/top'
-  #get 'root' => ""
+  root :to => "homes#top"
   devise_for :staffs
   resources :users
   resources :toilet_records
