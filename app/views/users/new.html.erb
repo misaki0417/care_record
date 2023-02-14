@@ -1,0 +1,28 @@
+利用者新規登録
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <table>
+        <%= form_with model:@user, url:users_path do |user| %>
+        <tr>
+          <th>氏名</th>
+          <td><%= user.text_field :user_name %></td>
+        </tr>
+        <tr>
+          <th>生年月日</th>
+          <td><%= user.date_field :birthdate %></td>
+        </tr>
+        <tr>
+          <th>プロフィール</th>
+          <td><%= user.text_field :profile %></td>
+        </tr>
+        <% end %>
+      </tabless>
+
+
+    </div>
+  </div>
+</div>
+
+
