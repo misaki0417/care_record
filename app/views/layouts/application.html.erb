@@ -12,6 +12,39 @@
   </head>
 
   <body>
+    <header>
+      <div>
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <ul class="navbar-nav">
+
+            <%# if staff_signed_in? %>
+            <li class="nav-item">
+              <%= link_to new_meal_drug_taking_record_path do %>
+                食事・服薬</br>
+                新規登録
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to new_vital_record_path do %>
+                バイタル</br>
+                新規登録
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to new_toilet_record_path do %>
+                排泄</br>
+                新規登録
+              <% end %>
+            </li>
+            <li class="nav-item"><%= link_to "ログアウト", destroy_staff_session_path, method: :delete %></li>
+            <%# else %>
+            <!--<li class="nav-item"><%#= link_to "新規登録", new_staff_registration_path %></li>-->
+            <!--<li class="nav-item"><%#= link_to "ログイン", new_staff_session_path %></li>-->
+            <%# end %>
+          </ul>
+        </nav>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>
