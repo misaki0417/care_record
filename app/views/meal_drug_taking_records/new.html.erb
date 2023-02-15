@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>食事・服薬　新規登録</h2>
+      <%= form_with model: @record, url: meal_drug_taking_records_path do |record| %>
+      <table>
+        <tr>
+          <th>利用者</th>
+          <td><%= record.select :user_id, options_from_collection_for_select(User.all, :id, :user_name) %></td>
+        </tr>
+        <tr>
+          <th>日付</th>
+          <td><%= record.date_field :date %></td>
+        </tr>
+        <tr>
+          <th>時間</th>
+          <td><%= record.time_field :time %></td>
+        </tr>
+        <tr>
+          <th>食事摂取量</th>
+          <td><%= record.select :ingestion_quantity, *[1..10] %></td>
+        </tr>
+        <tr>
+          <th>服薬</th>
+          <td><%= record.select :drug_taking_record, ['未', '済'] %></td>
+        </tr>
+      </table>
+      <%= record.submit "保存" %>
+      <%= flash[:notice] %>
+      <%= flash[:danger] %>
+      <% end %>
+    </div>
+  </div>
+</div>
