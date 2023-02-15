@@ -1,6 +1,27 @@
-<h1>Homes#top</h1>
 
 <%= link_to "ログアウト", destroy_staff_session_path, method: :delete %>
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-4 col-offset-md-4">
+      <table>
+        <tr>
+          <th>利用者一覧</th>
+        </tr>
+        <tr>
+          <td>
+            <% @user.each do |user| %>
+              <%= link_to user_path(user.id) do %>
+                <%= user.user_name %></br>
+              <% end %>
+            <% end %>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
 
 
 
