@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>バイタル　新規登録</h2>
+      <%= form_with model: @vital, url: vital_records_path do |vital| %>
+      <table>
+        <tr>
+          <th>利用者</th>
+          <td><%= vital.select :user_id, options_from_collection_for_select(User.all, :id, :user_name) %></td>
+        </tr>
+        <tr>
+          <th>日付</th>
+          <td><%= vital.date_field :date %></td>
+        </tr>
+        <tr>
+          <th>時間</th>
+          <td><%= vital.time_field :time %></td>
+        </tr>
+        <tr>
+          <th>血圧</th>
+          <td><%= vital.text_field :blood_pressure %>（例）123/45の形式で記録してください</td>
+        </tr>
+        <tr>
+          <th>脈拍</th>
+          <td><%= vital.number_field :pulse %></td>
+        </tr>
+        <tr>
+          <th>体温</th>
+          <td><%= vital.text_field :body_temperature %>℃</td>
+        </tr>
+      </table>
+      <%= vital.submit :"保存" %><%= flash[:notice] %><%= flash[:alert] %>
+      <% end %>
+    </div>
+  </div>
+</div>

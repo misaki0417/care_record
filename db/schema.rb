@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2023_02_12_131355) do
     t.time "time"
     t.integer "ingestion_quantity"
     t.string "drug_taking_record"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -13,11 +13,15 @@ class MealDrugTakingRecordsController < ApplicationController
       flash[:danger] = "保存に失敗しました"
     end
   end
+  
+  def index
+    record
+  end
 
   private
 
   def meal_drug_taking_record_params
-    params.require(:meal_drug_taking_record).permit(:date, :time, :ingestion_quantity, :drug_taking_record)
+    params.require(:meal_drug_taking_record).permit(:date, :time, :ingestion_quantity, :drug_taking_record, :user_id)
   end
 
 end

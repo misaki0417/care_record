@@ -5,6 +5,7 @@ class CreateMealDrugTakingRecords < ActiveRecord::Migration[6.1]
       t.time :time
       t.integer :ingestion_quantity
       t.string :drug_taking_record
+      t.integer :user_id
 
       t.timestamps
     end

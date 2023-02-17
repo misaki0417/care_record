@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>排泄記録　新規登録</h2>
+      <%= form_with model: @toilet_record, url: toilet_records_path do |toilet_record| %>
+      <table>
+        <tr>
+          <th>利用者</th>
+          <td><%= toilet_record.select :user_id, options_from_collection_for_select(User.all, :id, :user_name) %></td>
+        </tr>
+        <tr>
+          <th>日付</th>
+          <td><%= toilet_record.date_field :date %></td>
+        </tr>
+        <tr>
+          <th>時間</th>
+          <td><%= toilet_record.time_field :time %></td>
+        </tr>
+        <tr>
+          <th>トイレ・おむつ</th>
+          <td><%= toilet_record.select :toilet_method, ['トイレ', 'おむつ'] %></td>
+        </tr>
+        <tr>
+          <th>排便</th>
+          <td><%= toilet_record.select :urination_record, ['◯', '×'] %></td>
+        </tr>
+        <tr>
+          <th>排尿</th>
+          <td><%= toilet_record.select :defecation_record, ['◯', '×'] %></td>
+        </tr>
+        <tr>
+          <th>排便状況</th>
+          <td><%= toilet_record.text_field :defecation_status %>便の状態（硬・普・軟）/便量（大・中・少）　（例）軟/中</td>
+        </tr>
+      </table>
+      <%= toilet_record.submit "保存" %><%= flash[:notice] %><%= flash[:alert] %>
+      <% end %>
+    </div>
+  </div>
+</div>
